@@ -1,7 +1,8 @@
 from django.shortcuts import render
-from django.contrib.auth import logout
 from django.http import HttpResponseRedirect
 from .models import News
+from django.contrib.admin.models import LogEntry
+
 
 def home(request):
     return render(request,'main/home.html')
@@ -21,5 +22,6 @@ def profile(request):
     return render(request, 'main/profile.html')
 
 
-def statistics():
-    return None
+def statistics(request):
+    actions = LogEntry.objects.filter(user=request.user).order_by('-action_time')
+    return render(request, 'main/statistics.html', {'actions': actions})

@@ -1,17 +1,21 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
-<body>
+{% extends 'registration/login_layout.html' %}
+{% load static %}
 
-<form method="post">
+{% block title %} Sepira - Log In {% endblock %}
+
+{% block header_title %} Log In {% endblock %}
+
+{% block content %}
+
+<form method="post" class="login_form">
     {% csrf_token %}
     {{ form.as_p }}
     <button type="submit">Log In</button>
 </form>
 
 
-</body>
-</html>
+<footer class="footer">
+        Powered by Sepira
+    </footer>
+
+{% endblock %}

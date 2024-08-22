@@ -3,7 +3,7 @@ from . import views
 from django.conf import settings
 from django.conf.urls.static import static
 from django.contrib.auth.views import LogoutView, PasswordChangeView
-from qrcodes import views as qrcodes_views  # Change this line
+from qrcodes import views as qrcodes_views
 
 urlpatterns = [
     path('', views.home, name='home'),
@@ -18,4 +18,4 @@ urlpatterns = [
     path('accounts/logout/', LogoutView.as_view(), name='logout'),
     path('accounts/change_password/', PasswordChangeView.as_view(), name='change_password'),
     path('add_item/', qrcodes_views.add_item, name='add_item'),
-] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
+] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT) + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

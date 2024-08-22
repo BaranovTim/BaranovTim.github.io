@@ -1,0 +1,34 @@
+{% extends 'main/statistics_layout.html' %}
+{% load static %}
+
+{% block title %} Sepira - statistics {% endblock %}
+
+{% block header_title %} Statistics {% endblock %}
+
+{% block content %}
+
+{% if actions %}
+    <div class="actions">
+        <ul>
+            {% for action in actions %}
+                    <li class="action">
+                        <strong>{{ action.action_time|date:"d M Y H:i" }}</strong> -
+                        {{ action.type }}: {{ action.change_message }}
+                    </li>
+                <br>
+            {% endfor %}
+        </ul>
+    </div>
+
+{% else %}
+    <div class="no_actions">
+       No actions yet
+    </div>
+{% endif %}
+
+
+    <footer class="footer">
+        Powered by Sepira
+    </footer>
+
+{% endblock %}

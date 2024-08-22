@@ -43,6 +43,7 @@ body {
 .username_or_icon {
     text-decoration: None;
     color: #d5d5d5;
+    font-size: 18px;
 }
 
 
@@ -68,15 +69,26 @@ body {
 
 }
 
-
-.news {
+.actions {
     display: flex;
     margin-top: 20px;
     align-items: center;
     flex-direction: column;
 }
 
-.new {
+.action-date {
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 600;
+    background: #3b3b3b;
+    color: #fff;
+    border-radius: 20px;
+    padding: 1% 2%;
+    margin-bottom: 10px;
+    width: 100%;
+    text-align: center;
+}
+
+.action {
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -85,56 +97,9 @@ body {
     background: #595858;
     border-radius: 20px;
     padding: 2% 2%;
-    width: 85%;
+    margin-bottom: 5px;
 }
 
-.text-content {
-    flex-grow: 1;
-}
-
-.title {
-    font-size: 18px;
-    font-weight: 600;
-}
-
-.date {
-    font-size: 14px;
-    font-weight: 600;
-}
-
-.user {
-    color: #d5d5d5;
-    font-size: 12px;
-}
-
-
-.content {
-    color: #000000;
-    font-size: 16px;
-    max-width: 100%;
-    word-wrap: break-word;
-}
-
-
-.img {
-    border-radius: 15px;
-    width: 120px ;
-    height: 90px;
-    max-width: 75%;
-    max-height: 75%;
-}
-
-
-
-
-
-.no_news {
-    font-family: 'Open Sans', sans-serif;
-    font-weight: 400;
-    font-size: 24px;
-    color: #d5d5d5;
-    display: flex;
-    justify-content: center;
-    margin-top: 50%;
-
+ul {
+    padding-left: 0;
 }

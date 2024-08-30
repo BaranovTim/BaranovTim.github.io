@@ -5,6 +5,6 @@ from django.conf.urls.static import static
 
 urlpatterns = [
     path('', views.take, name='take'),
-    path('preaction_seventh/qrcodes', include('qrcodes.urls')),
-    path('preaction_eighth/qrcodes', include('qrcodes.urls')),
+    path('preaction_seventh/qrcodes/', include('qrcodes.urls')),
+    path('preaction_eighth/qrcodes/', include('qrcodes.urls')),
 ] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)

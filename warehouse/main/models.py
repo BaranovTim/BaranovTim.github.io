@@ -17,3 +17,4 @@ class News(models.Model):
         verbose_name = 'News'
         verbose_name_plural = 'News'
 
+

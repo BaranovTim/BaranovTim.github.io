@@ -8,6 +8,8 @@
 {% block content %}
 
 {% if actions %}
+<div class="actions_true">
+
     <div class="actions">
         <ul>
             {% for action in actions %}
@@ -20,15 +22,21 @@
         </ul>
     </div>
 
+    <footer class="footer">
+        Powered by Sepira
+    </footer>
+</div>
 {% else %}
+<div class="actions_false">
     <div class="no_actions">
        No actions yet
     </div>
-{% endif %}
-
 
     <footer class="footer">
         Powered by Sepira
     </footer>
+</div>
+{% endif %}
+
 
 {% endblock %}

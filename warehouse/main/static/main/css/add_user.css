@@ -69,14 +69,13 @@ body {
 
 }
 
-
-.change_password_form {
+.add_user_form {
     padding-top: 20px;
     padding-left: 6%;
     padding-bottom: 50px;
 }
 
-.change_password_form button {
+.add_user_form button {
     border-radius: 10px;
     border: None;
     background: #85fa4b;

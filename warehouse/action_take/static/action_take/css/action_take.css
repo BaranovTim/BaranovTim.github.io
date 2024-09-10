@@ -115,7 +115,7 @@ header {
     font-size: 14px;
     margin: 10px 20px; /* Add margin to create space around footer */
     border-radius: 20px; /* Add border radius for rounded corners */
-    position: relative;
+    position: fixed;
     bottom: 0;
     width: 90%;
 

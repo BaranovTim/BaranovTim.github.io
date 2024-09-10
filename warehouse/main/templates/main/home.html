@@ -50,23 +50,44 @@
 
     <div class="recommended">
         <div class="recommended_angle">
+            {% if user.is_staff == True %}
+            <p class="recommended_text">
+                Warehouse tools
+            </p>
+                <div class="button-row">
+                    <a href="{% url 'add_item' %}" class="btn btn-primary ">
+                        <div class="btn-content">
+                            Add Item
+                            <i class="fas fa-box"></i>
+                        </div>
+                    </a>
+                    <a href="{% url 'stock' %}" class="btn btn-primary ">
+                        <div class="btn-content">
+                            Inventory
+                            <i class="fas fa-boxes"></i>
+                        </div>
+                    </a>
+                </div>
+            {% else %}
+
             <p class="recommended_text">
                 Recommended for you
             </p>
-            <div class="button-row">
-                <a href="{% url 'statistics' %}" class="btn btn-primary ">
-                    <div class="btn-content">
-                        Statistics
-                        <i class="fas fa-chart-line"></i>
-                    </div>
-                </a>
-                <a href="{% url 'info' %}" class="btn btn-primary ">
-                    <div class="btn-content">
-                        Info
-                        <i class="fas fa-info"></i>
-                    </div>
-                </a>
-            </div>
+                <div class="button-row">
+                    <a href="{% url 'statistics' %}" class="btn btn-primary ">
+                        <div class="btn-content">
+                            Statistics
+                            <i class="fas fa-chart-line"></i>
+                        </div>
+                    </a>
+                    <a href="{% url 'info' %}" class="btn btn-primary ">
+                        <div class="btn-content">
+                            Info
+                            <i class="fas fa-info"></i>
+                        </div>
+                    </a>
+                </div>
+            {% endif %}
         </div>
     </div>
 </div>

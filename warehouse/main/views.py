@@ -1,7 +1,7 @@
 from django.shortcuts import render, redirect
 from django.http import HttpResponseRedirect
 from .models import News
-from qrcodes.models import Warehouse_stock, QRScan
+from warehouse.qrcodes.models import Warehouse_stock, QRScan
 from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth.decorators import login_required
 

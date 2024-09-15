@@ -6,7 +6,7 @@ from win10toast import ToastNotifier
 
 def notification(title, message):
     toast = ToastNotifier()
-    toast.show_toast(title, message, duration=3)
+    toast.show_toast(title, message, duration=2)
 @login_required(login_url='profile')
 def quantity(request):
     current_url = request.path

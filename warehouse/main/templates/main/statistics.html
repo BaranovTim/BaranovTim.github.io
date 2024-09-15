@@ -8,24 +8,38 @@
 {% block content %}
 
 {% if actions %}
-<div class="actions_true">
+    <div class="actions_true">
+    {% if user.is_staff %}
+            <div class="actions">
+                <ul>
+                    {% for action_all in actions_all %}
+                            <li class="action">
+                                <strong>{{ action_all.scanned_at|date:"d M Y H:i" }}</strong>
+                                {{action_all.scanned_by}} {{ action_all.action }} {{ action_all.quantity }} {{ action_all.item.name }}
+                            </li>
+                        <br>
+                    {% endfor %}
+                </ul>
+            </div>
 
-    <div class="actions">
-        <ul>
-            {% for action in actions %}
-                    <li class="action">
-                        <strong>{{ action.action_time|date:"d M Y H:i" }}</strong> -
-                        {{ action.type }}: {{ action.change_message }}
-                    </li>
-                <br>
-            {% endfor %}
-        </ul>
+    {% else %}
+            <div class="actions">
+                <ul>
+                    {% for action in actions %}
+                            <li class="action">
+                                <strong>{{ action.scanned_at|date:"d M Y H:i" }}</strong>
+                                {{ action.action }}: {{ action.quantity }} {{ action.item.name }}
+                            </li>
+                        <br>
+                    {% endfor %}
+                </ul>
+            </div>
+    {% endif %}
+
+        <footer class="footer">
+            Powered by Sepira
+        </footer>
     </div>
-
-    <footer class="footer">
-        Powered by Sepira
-    </footer>
-</div>
 {% else %}
 <div class="actions_false">
     <div class="no_actions">

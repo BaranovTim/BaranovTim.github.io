@@ -1,8 +1,7 @@
 from django.shortcuts import render, redirect
 from django.http import HttpResponseRedirect
 from .models import News
-from qrcodes.models import Warehouse_stock
-from django.contrib.admin.models import LogEntry
+from qrcodes.models import Warehouse_stock, QRScan
 from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth.decorators import login_required
 
@@ -26,8 +25,14 @@ def profile(request):
 
 @login_required(login_url='profile')
 def statistics(request):
-    actions = LogEntry.objects.filter(user=request.user).order_by('-action_time')
-    return render(request, 'main/statistics.html', {'actions': actions})
+    actions = QRScan.objects.filter(scanned_by=request.user).order_by('-scanned_at')
+    actions_all = QRScan.objects.order_by('-scanned_at')
+    context = {
+        'actions': actions,
+        'actions_all': actions_all
+    }
+    return render(request, 'main/statistics.html', context)
+
 @login_required(login_url='profile')
 def add_user(request):
     if request.method == 'POST':

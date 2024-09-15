@@ -84,7 +84,7 @@ WSGI_APPLICATION = 'warehouse.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'Warehouse_3',
+        'NAME': 'Warehouse_4',
         'USER': 'postgres',
         'PASSWORD': 'Tim597707',
         'HOST': 'localhost',
@@ -130,7 +130,6 @@ USE_TZ = True
 STATIC_URL = 'static/'
 
 STATICFILES_DIRS = [
-    BASE_DIR / "static",
 ]
 
 # Default primary key field type

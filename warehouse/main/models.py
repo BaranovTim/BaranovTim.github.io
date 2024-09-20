@@ -1,5 +1,6 @@
 from django.contrib.auth.models import User
 from django.db import models
+from qrcodes.models import Warehouse_stock, QRScan
 
 # Create your models here.
 
@@ -16,5 +17,11 @@ class News(models.Model):
     class Meta:
         verbose_name = 'News'
         verbose_name_plural = 'News'
+
+class Warehouse_stock_deploy(models.Model):
+    Warehouse_stock_dep = models.ForeignKey(Warehouse_stock , on_delete=models.CASCADE)
+
+class QRScan_deploy(models.Model):
+    QRScan_dep = models.ForeignKey(QRScan, on_delete=models.CASCADE)
 
 

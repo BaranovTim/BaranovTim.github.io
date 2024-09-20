@@ -196,3 +196,21 @@ body {
     border-radius: 10px;
     border: None;
 }
+
+.admin_text {
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 400;
+    color: #8f8f8f;
+    padding-bottom: 20px;
+    padding-top: 10px;
+}
+
+.admin_text a {
+    text-decoration: None;
+    color: #6a80f3;
+    font-size: 12px;
+}
+.admin_text h5 {
+    font-size: 12px;
+
+}

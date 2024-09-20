@@ -20,7 +20,7 @@ from django.urls import path, include
 #from warehouse.main import views
 
 urlpatterns = [
-    path('admin/', admin.site.urls),
+    path('admin/', admin.site.urls, name='admin'),
     path('', include('main.urls')),
     path('accounts/', include('django.contrib.auth.urls')),
 ]

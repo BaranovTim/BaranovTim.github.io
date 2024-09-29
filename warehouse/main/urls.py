@@ -9,6 +9,7 @@ urlpatterns = [
     path('', views.home, name='home'),
     path('info', views.info, name='info'),
     path('news/', views.news, name='news'),
+    path('add_news/', views.add_news, name='add_news'),
     path('action_add/', include('action_add.urls')),
     path('action_take/', include('action_take.urls')),
     path('action_return/', include('action_return.urls')),

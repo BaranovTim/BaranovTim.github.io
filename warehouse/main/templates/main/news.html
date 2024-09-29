@@ -7,6 +7,12 @@
 
 {% block content %}
 
+{% if user.is_staff %}
+<div class="add_news">
+    <a href="{% url 'add_news' %}"><i class="fas fa-plus"></i></a>
+</div>
+{% endif %}
+
 {% if news %}
     <div class="news_true">
 
@@ -24,8 +30,9 @@
                 {% endif %}
             </div>
             <br>
-        </div>
         {% endfor %}
+        </div>
+
 
         <footer class="footer">
             Powered by Sepira

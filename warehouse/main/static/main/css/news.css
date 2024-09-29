@@ -95,7 +95,7 @@ body {
 
 .news {
     display: flex;
-    margin-top: 20px;
+    margin-top: 40px;
     align-items: center;
     flex-direction: column;
 }
@@ -146,6 +146,7 @@ body {
     height: 90px;
     max-width: 75%;
     max-height: 75%;
+    object-fit: cover;
 }
 
 
@@ -161,4 +162,15 @@ body {
     justify-content: center;
     margin-top: 50%;
 
+}
+
+.add_news {
+    margin-left: 90%;
+    margin-top: 15px;
+    position: absolute;
+}
+
+.add_news i {
+    color: white;
+    font-size: 18px;
 }
